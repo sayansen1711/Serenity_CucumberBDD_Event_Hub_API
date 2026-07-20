@@ -1,0 +1,682 @@
+{
+  "name": "Validate negative registration scenarios",
+  "id": "authentication-test-cases;validate-negative-registration-scenarios",
+  "scenarioId": "classpath:features/Auth:Validate negative registration scenarios",
+  "methodName": "Validate negative registration scenarios",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Validate negative registration scenarios ({endpoint\u003dregister, email\u003djohn1401@gmail.com, password\u003dca3Qmeps, returnCode\u003d400, success\u003dfalse, error\u003dEmail already registered, field\u003d, message\u003d})",
+      "duration": 246,
+      "startTime": "2026-06-29T02:40:19.082186500+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 27,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given an EventHub API is available",
+          "duration": 7,
+          "startTime": "2026-06-29T02:40:19.082186500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "When a payload with fields \"john1401@gmail.com\" and \"ca3Qmeps\" is passed",
+          "duration": 18,
+          "startTime": "2026-06-29T02:40:19.089707600+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And EventHub API is invoked with \"register\"",
+          "duration": 169,
+          "startTime": "2026-06-29T02:40:19.108540+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 5,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-06-29T02:40:20.729744300+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"password\": \"ca3Qmeps\",\n    \"email\": \"john1401@gmail.com\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Sun, 28 Jun 2026 21:10:18 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 65\r\nETag: W/\"41-NXXV5luJg781QlBKLQbQgu0cRfs\"\r\nConnection: close\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": false,\n    \"error\": \"Email already registered\",\n    \"details\": [\n        \n    ]\n}",
+                "statusCode": 400
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "description": "Then the registration should fail with 400, \"false\"",
+          "duration": 12,
+          "startTime": "2026-06-29T02:40:19.279600100+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "And validate an \"Email already registered\" is displayed",
+          "duration": 14,
+          "startTime": "2026-06-29T02:40:19.294439300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And validate details \"\" message is \"\"",
+          "duration": 17,
+          "startTime": "2026-06-29T02:40:19.311111200+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "description": "2: Validate negative registration scenarios ({endpoint\u003dregister, email\u003djohn151, password\u003dca3Qmeps, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003demail, message\u003dA valid email is required})",
+      "duration": 281,
+      "startTime": "2026-06-29T02:40:19.337588700+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 28,
+      "children": [
+        {
+          "number": 10,
+          "description": "Given an EventHub API is available",
+          "duration": 1,
+          "startTime": "2026-06-29T02:40:19.338602300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "When a payload with fields \"john151\" and \"ca3Qmeps\" is passed",
+          "duration": 19,
+          "startTime": "2026-06-29T02:40:19.339977300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "And EventHub API is invoked with \"register\"",
+          "duration": 158,
+          "startTime": "2026-06-29T02:40:19.359845500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 13,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-06-29T02:40:20.745230100+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"password\": \"ca3Qmeps\",\n    \"email\": \"john151\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Sun, 28 Jun 2026 21:10:19 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 113\r\nETag: W/\"71-yUJwjOIYVuoIjUdOz9uUDH1Rdwo\"\r\nConnection: close\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"A valid email is required\"\n        }\n    ]\n}",
+                "statusCode": 400
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "description": "Then the registration should fail with 400, \"false\"",
+          "duration": 21,
+          "startTime": "2026-06-29T02:40:19.527629100+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "And validate an \"Validation failed\" is displayed",
+          "duration": 15,
+          "startTime": "2026-06-29T02:40:19.548713600+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "And validate details \"email\" message is \"A valid email is required\"",
+          "duration": 55,
+          "startTime": "2026-06-29T02:40:19.564043900+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 17,
+      "description": "3: Validate negative registration scenarios ({endpoint\u003dregister, email\u003djohn1801@gmail.com, password\u003d, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003dpassword, message\u003dPassword must be at least 6 characters})",
+      "duration": 260,
+      "startTime": "2026-06-29T02:40:19.628324600+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 29,
+      "children": [
+        {
+          "number": 18,
+          "description": "Given an EventHub API is available",
+          "duration": 15,
+          "startTime": "2026-06-29T02:40:19.628324600+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 19,
+          "description": "When a payload with fields \"john1801@gmail.com\" and \"\" is passed",
+          "duration": 26,
+          "startTime": "2026-06-29T02:40:19.643780+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 20,
+          "description": "And EventHub API is invoked with \"register\"",
+          "duration": 167,
+          "startTime": "2026-06-29T02:40:19.670605500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 21,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-06-29T02:40:20.763513100+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"password\": \"\",\n    \"email\": \"john1801@gmail.com\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Sun, 28 Jun 2026 21:10:19 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 129\r\nETag: W/\"81-AQGOfbJn5khNCm8RDj0jRHdfydY\"\r\nConnection: close\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"password\",\n            \"message\": \"Password must be at least 6 characters\"\n        }\n    ]\n}",
+                "statusCode": 400
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 22,
+          "description": "Then the registration should fail with 400, \"false\"",
+          "duration": 14,
+          "startTime": "2026-06-29T02:40:19.838559500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 23,
+          "description": "And validate an \"Validation failed\" is displayed",
+          "duration": 17,
+          "startTime": "2026-06-29T02:40:19.852811300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 24,
+          "description": "And validate details \"password\" message is \"Password must be at least 6 characters\"",
+          "duration": 15,
+          "startTime": "2026-06-29T02:40:19.872749300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 25,
+      "description": "4: Validate negative registration scenarios ({endpoint\u003dregister, email\u003djohn1801@gmail.com, password\u003dpassw, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003dpassword, message\u003dPassword must be at least 6 characters})",
+      "duration": 251,
+      "startTime": "2026-06-29T02:40:19.898619600+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 30,
+      "children": [
+        {
+          "number": 26,
+          "description": "Given an EventHub API is available",
+          "duration": 7,
+          "startTime": "2026-06-29T02:40:19.900460500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 27,
+          "description": "When a payload with fields \"john1801@gmail.com\" and \"passw\" is passed",
+          "duration": 11,
+          "startTime": "2026-06-29T02:40:19.908730700+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 28,
+          "description": "And EventHub API is invoked with \"register\"",
+          "duration": 170,
+          "startTime": "2026-06-29T02:40:19.925167100+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 29,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-06-29T02:40:20.787578900+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"password\": \"passw\",\n    \"email\": \"john1801@gmail.com\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Sun, 28 Jun 2026 21:10:19 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 129\r\nETag: W/\"81-AQGOfbJn5khNCm8RDj0jRHdfydY\"\r\nConnection: close\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"password\",\n            \"message\": \"Password must be at least 6 characters\"\n        }\n    ]\n}",
+                "statusCode": 400
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 30,
+          "description": "Then the registration should fail with 400, \"false\"",
+          "duration": 14,
+          "startTime": "2026-06-29T02:40:20.095544300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 31,
+          "description": "And validate an \"Validation failed\" is displayed",
+          "duration": 15,
+          "startTime": "2026-06-29T02:40:20.110360500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 32,
+          "description": "And validate details \"password\" message is \"Password must be at least 6 characters\"",
+          "duration": 22,
+          "startTime": "2026-06-29T02:40:20.125792600+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 33,
+      "description": "5: Validate negative registration scenarios ({endpoint\u003dregister, email\u003djohn1801, password\u003dpassw, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003demail, password, message\u003dA valid email is required, Password must be at least 6 characters})",
+      "duration": 258,
+      "startTime": "2026-06-29T02:40:20.152920+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 31,
+      "children": [
+        {
+          "number": 34,
+          "description": "Given an EventHub API is available",
+          "duration": 3,
+          "startTime": "2026-06-29T02:40:20.154938900+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 35,
+          "description": "When a payload with fields \"john1801\" and \"passw\" is passed",
+          "duration": 21,
+          "startTime": "2026-06-29T02:40:20.158721500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 36,
+          "description": "And EventHub API is invoked with \"register\"",
+          "duration": 185,
+          "startTime": "2026-06-29T02:40:20.182561500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 37,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-06-29T02:40:20.806897300+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"password\": \"passw\",\n    \"email\": \"john1801\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Sun, 28 Jun 2026 21:10:19 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 185\r\nETag: W/\"b9-ZSIqYyoUFrODpbbHL6X9a0KYZXY\"\r\nConnection: close\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"A valid email is required\"\n        },\n        {\n            \"field\": \"password\",\n            \"message\": \"Password must be at least 6 characters\"\n        }\n    ]\n}",
+                "statusCode": 400
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 38,
+          "description": "Then the registration should fail with 400, \"false\"",
+          "duration": 13,
+          "startTime": "2026-06-29T02:40:20.369571200+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 39,
+          "description": "And validate an \"Validation failed\" is displayed",
+          "duration": 11,
+          "startTime": "2026-06-29T02:40:20.385275100+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 40,
+          "description": "And validate details \"email, password\" message is \"A valid email is required, Password must be at least 6 characters\"",
+          "duration": 13,
+          "startTime": "2026-06-29T02:40:20.397774400+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "description": "6: Validate negative registration scenarios ({endpoint\u003dregister, email\u003d, password\u003d, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003demail, password, message\u003dA valid email is required, Password must be at least 6 characters})",
+      "duration": 235,
+      "startTime": "2026-06-29T02:40:20.417483100+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 32,
+      "children": [
+        {
+          "number": 42,
+          "description": "Given an EventHub API is available",
+          "duration": 5,
+          "startTime": "2026-06-29T02:40:20.418236400+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 43,
+          "description": "When a payload with fields \"\" and \"\" is passed",
+          "duration": 20,
+          "startTime": "2026-06-29T02:40:20.423539900+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 44,
+          "description": "And EventHub API is invoked with \"register\"",
+          "duration": 166,
+          "startTime": "2026-06-29T02:40:20.444035300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 45,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-06-29T02:40:20.838560100+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"password\": \"\",\n    \"email\": \"\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Sun, 28 Jun 2026 21:10:20 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 185\r\nETag: W/\"b9-ZSIqYyoUFrODpbbHL6X9a0KYZXY\"\r\nConnection: close\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"A valid email is required\"\n        },\n        {\n            \"field\": \"password\",\n            \"message\": \"Password must be at least 6 characters\"\n        }\n    ]\n}",
+                "statusCode": 400
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 46,
+          "description": "Then the registration should fail with 400, \"false\"",
+          "duration": 18,
+          "startTime": "2026-06-29T02:40:20.610303900+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 47,
+          "description": "And validate an \"Validation failed\" is displayed",
+          "duration": 11,
+          "startTime": "2026-06-29T02:40:20.628339700+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 48,
+          "description": "And validate details \"email, password\" message is \"A valid email is required, Password must be at least 6 characters\"",
+          "duration": 11,
+          "startTime": "2026-06-29T02:40:20.642289600+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "classpath:features/Auth",
+    "storyName": "Authentication Test Cases",
+    "displayName": "Authentication Test Cases",
+    "path": "Auth",
+    "pathElements": [
+      {
+        "name": "Auth",
+        "description": ""
+      }
+    ],
+    "type": "feature"
+  },
+  "title": "Validate negative registration scenarios",
+  "description": "",
+  "tags": [
+    {
+      "name": "NegativeTestCase",
+      "type": "tag",
+      "displayName": "NegativeTestCase",
+      "rawStringFromValueTag": "NegativeTestCase"
+    }
+  ],
+  "startTime": "2026-06-29T02:40:19.082186500+05:30[Asia/Calcutta]",
+  "endTime": "2026-06-29T02:40:20.653455100+05:30[Asia/Calcutta]",
+  "duration": 1647,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "endpoint",
+      "email",
+      "password",
+      "returnCode",
+      "success",
+      "error",
+      "field",
+      "message"
+    ],
+    "rows": [
+      {
+        "values": [
+          "register",
+          "john1401@gmail.com",
+          "ca3Qmeps",
+          "400",
+          "false",
+          "Email already registered",
+          "",
+          ""
+        ],
+        "lineNumber": 27,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "register",
+          "john151",
+          "ca3Qmeps",
+          "400",
+          "false",
+          "Validation failed",
+          "email",
+          "A valid email is required"
+        ],
+        "lineNumber": 28,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "register",
+          "john1801@gmail.com",
+          "",
+          "400",
+          "false",
+          "Validation failed",
+          "password",
+          "Password must be at least 6 characters"
+        ],
+        "lineNumber": 29,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "register",
+          "john1801@gmail.com",
+          "passw",
+          "400",
+          "false",
+          "Validation failed",
+          "password",
+          "Password must be at least 6 characters"
+        ],
+        "lineNumber": 30,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "register",
+          "john1801",
+          "passw",
+          "400",
+          "false",
+          "Validation failed",
+          "email, password",
+          "A valid email is required, Password must be at least 6 characters"
+        ],
+        "lineNumber": 31,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "register",
+          "",
+          "",
+          "400",
+          "false",
+          "Validation failed",
+          "email, password",
+          "A valid email is required, Password must be at least 6 characters"
+        ],
+        "lineNumber": 32,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given an EventHub API is available\n\rWhen a payload with fields \"\u003cemail\u003e\" and \"\u003cpassword\u003e\" is passed\n\rAnd EventHub API is invoked with \"\u003cendpoint\u003e\"\n\rThen the registration should fail with \u003creturnCode\u003e, \"\u003csuccess\u003e\"\n\rAnd validate an \"\u003cerror\u003e\" is displayed\n\rAnd validate details \"\u003cfield\u003e\" message is \"\u003cmessage\u003e\"\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS",
+  "scenarioOutline": "Given an EventHub API is available\r\nWhen a payload with fields \"\u003cemail\u003e\" and \"\u003cpassword\u003e\" is passed\r\nAnd EventHub API is invoked with \"\u003cendpoint\u003e\"\r\nThen the registration should fail with \u003creturnCode\u003e, \"\u003csuccess\u003e\"\r\nAnd validate an \"\u003cerror\u003e\" is displayed\r\nAnd validate details \"\u003cfield\u003e\" message is \"\u003cmessage\u003e\""
+}

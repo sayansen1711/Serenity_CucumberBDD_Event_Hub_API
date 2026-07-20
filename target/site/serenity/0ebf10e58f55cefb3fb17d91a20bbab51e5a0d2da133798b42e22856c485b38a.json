@@ -1,0 +1,243 @@
+{
+  "name": "Validating positive test cases for User Registration API",
+  "id": "authentication-test-cases;validating-positive-test-cases-for-user-registration-api",
+  "scenarioId": "classpath:features/Auth:Validating positive test cases for User Registration API",
+  "methodName": "Validating positive test cases for User Registration API",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Validating positive test cases for User Registration API ({endpoint\u003dregister, email\u003djohn3@gmail.com, password\u003dca3Qmeps, returnCode\u003d201, message\u003dtrue})",
+      "duration": 4121,
+      "startTime": "2026-06-29T03:26:32.922228400+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 13,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given an EventHub API is available",
+          "duration": 177,
+          "startTime": "2026-06-29T03:26:32.932295400+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "When a payload with fields \"john3@gmail.com\" and \"ca3Qmeps\" is passed",
+          "duration": 75,
+          "startTime": "2026-06-29T03:26:33.158790700+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "And EventHub API is invoked with \"register\"",
+          "duration": 3032,
+          "startTime": "2026-06-29T03:26:33.236354500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 5,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-06-29T03:26:41.220110800+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"password\": \"ca3Qmeps\",\n    \"email\": \"john3@gmail.com\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Sun, 28 Jun 2026 21:56:35 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 256\r\nETag: W/\"100-R+bK59/D+077/vsXu4tO+6CnqOc\"\r\nKeep-Alive: timeout\u003d5, max\u003d100\r\nConnection: Keep-Alive\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE5Njk1LCJlbWFpbCI6ImpvaG4zQGdtYWlsLmNvbSIsImlhdCI6MTc4MjY4Mzc5NSwiZXhwIjoxNzgzMjg4NTk1fQ.XxGRlfBYftIeLnJYXYmHwYNb7Liqb0RvUHrnbyuJdAQ\",\n    \"user\": {\n        \"id\": 19695,\n        \"email\": \"john3@gmail.com\"\n    }\n}",
+                "statusCode": 201
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "description": "Then the API should pass with 201, \"true\"",
+          "duration": 734,
+          "startTime": "2026-06-29T03:26:36.270081800+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "And validate a JWT token is generated",
+          "duration": 35,
+          "startTime": "2026-06-29T03:26:37.005024900+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "description": "2: Validating positive test cases for User Registration API ({endpoint\u003dregister, email\u003djohn4@gmail.com, password\u003dca3Qmeps, returnCode\u003d201, message\u003dtrue})",
+      "duration": 390,
+      "startTime": "2026-06-29T03:26:37.058218400+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 14,
+      "children": [
+        {
+          "number": 9,
+          "description": "Given an EventHub API is available",
+          "duration": 9,
+          "startTime": "2026-06-29T03:26:37.058662500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 10,
+          "description": "When a payload with fields \"john4@gmail.com\" and \"ca3Qmeps\" is passed",
+          "duration": 17,
+          "startTime": "2026-06-29T03:26:37.067940300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "And EventHub API is invoked with \"register\"",
+          "duration": 320,
+          "startTime": "2026-06-29T03:26:37.087985500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 12,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-06-29T03:26:41.239927200+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"password\": \"ca3Qmeps\",\n    \"email\": \"john4@gmail.com\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Sun, 28 Jun 2026 21:56:36 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 256\r\nETag: W/\"100-RmaJd38i51cWozab0S0K06yrAsk\"\r\nKeep-Alive: timeout\u003d5, max\u003d100\r\nConnection: Keep-Alive\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjE5Njk2LCJlbWFpbCI6ImpvaG40QGdtYWlsLmNvbSIsImlhdCI6MTc4MjY4Mzc5NiwiZXhwIjoxNzgzMjg4NTk2fQ.5ufpvtIS-N0xl832aKnz8_EWLUreQ3yptJarx1WfbPE\",\n    \"user\": {\n        \"id\": 19696,\n        \"email\": \"john4@gmail.com\"\n    }\n}",
+                "statusCode": 201
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 13,
+          "description": "Then the API should pass with 201, \"true\"",
+          "duration": 20,
+          "startTime": "2026-06-29T03:26:37.408594300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 14,
+          "description": "And validate a JWT token is generated",
+          "duration": 19,
+          "startTime": "2026-06-29T03:26:37.428956+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "classpath:features/Auth",
+    "storyName": "Authentication Test Cases",
+    "displayName": "Authentication Test Cases",
+    "path": "Auth",
+    "pathElements": [
+      {
+        "name": "Auth",
+        "description": ""
+      }
+    ],
+    "type": "feature"
+  },
+  "title": "Validating positive test cases for User Registration API",
+  "description": "",
+  "tags": [
+    {
+      "name": "PositiveTestCase",
+      "type": "tag",
+      "displayName": "PositiveTestCase",
+      "rawStringFromValueTag": "PositiveTestCase"
+    }
+  ],
+  "startTime": "2026-06-29T03:26:32.908798900+05:30[Asia/Calcutta]",
+  "endTime": "2026-06-29T03:26:37.448782300+05:30[Asia/Calcutta]",
+  "duration": 8311,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "endpoint",
+      "email",
+      "password",
+      "returnCode",
+      "message"
+    ],
+    "rows": [
+      {
+        "values": [
+          "register",
+          "john3@gmail.com",
+          "ca3Qmeps",
+          "201",
+          "true"
+        ],
+        "lineNumber": 13,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "register",
+          "john4@gmail.com",
+          "ca3Qmeps",
+          "201",
+          "true"
+        ],
+        "lineNumber": 14,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given an EventHub API is available\n\rWhen a payload with fields \"\u003cemail\u003e\" and \"\u003cpassword\u003e\" is passed\n\rAnd EventHub API is invoked with \"\u003cendpoint\u003e\"\n\rThen the API should pass with \u003creturnCode\u003e, \"\u003cmessage\u003e\"\n\rAnd validate a JWT token is generated\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS",
+  "scenarioOutline": "Given an EventHub API is available\r\nWhen a payload with fields \"\u003cemail\u003e\" and \"\u003cpassword\u003e\" is passed\r\nAnd EventHub API is invoked with \"\u003cendpoint\u003e\"\r\nThen the API should pass with \u003creturnCode\u003e, \"\u003cmessage\u003e\"\r\nAnd validate a JWT token is generated"
+}

@@ -1,0 +1,120 @@
+plugins {
+    id 'java'
+    id 'net.serenity-bdd.serenity-gradle-plugin' version '5.3.9'
+}
+
+group = "org.example"
+version = "1.0-SNAPSHOT"
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    serenityCoreVersion    = '5.3.9'
+    serenityJunitVersion   = '5.3.9'
+    serenityCucumberVersion = '5.3.9'
+    cucumberVersion        = '7.15.0'
+    junitVersion           = '5.10.1'
+    junitPlatformVersion   = '1.10.1'
+    slf4jVersion           = '2.0.11'
+}
+
+dependencies {
+
+    // Serenity
+    testImplementation "net.serenity-bdd:serenity-core:${serenityCoreVersion}"
+    testImplementation "net.serenity-bdd:serenity-junit5:${serenityJunitVersion}"
+    testImplementation "net.serenity-bdd:serenity-cucumber:${serenityCucumberVersion}"
+    testImplementation "net.serenity-bdd:serenity-rest-assured:${serenityCoreVersion}"
+
+    // Cucumber
+    testImplementation "io.cucumber:cucumber-java:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-junit-platform-engine:${cucumberVersion}"
+    testImplementation "io.cucumber:cucumber-core:${cucumberVersion}"
+
+    // JUnit 5 — FIX 1: lowercase 'j' in junit-jupiter-api
+    //           FIX 2: all test-only deps moved to testImplementation/testRuntimeOnly
+    testImplementation "org.junit.jupiter:junit-jupiter-api:${junitVersion}"
+    testRuntimeOnly    "org.junit.jupiter:junit-jupiter-engine:${junitVersion}"
+    testImplementation "org.junit.platform:junit-platform-suite:${junitPlatformVersion}"
+    testRuntimeOnly    "org.junit.platform:junit-platform-launcher:${junitPlatformVersion}"
+
+    // REST Assured (already pulled in transitively by serenity-rest-assured,
+    // but explicit pin is fine)
+    testImplementation 'io.rest-assured:rest-assured:5.4.0'
+
+    // Jackson
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
+
+    // Lombok
+    compileOnly           'org.projectlombok:lombok:1.18.34'
+    annotationProcessor   'org.projectlombok:lombok:1.18.34'
+    testCompileOnly       'org.projectlombok:lombok:1.18.34'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.34'
+
+    // Logging — only one SLF4J binding allowed on the classpath
+    implementation "org.slf4j:slf4j-api:${slf4jVersion}"
+    testRuntimeOnly "org.slf4j:slf4j-simple:${slf4jVersion}"
+
+    // Utilities — FIX 3: removed space after colon in group ID
+    implementation 'com.google.guava:guava:33.0.0-jre'
+    testImplementation 'org.assertj:assertj-core:3.25.3'
+}
+
+sourceSets {
+    main {
+        java      { srcDirs = [] }
+        resources { srcDirs = [] }
+    }
+    test {
+        java      { srcDirs = ['src/test/java'] }
+        resources { srcDirs = ['src/test/resources'] }
+    }
+}
+
+test {
+    useJUnitPlatform()
+    workingDir = project.projectDir
+    systemProperty 'junit.platform.output.capture.stdout', 'true'
+    systemProperty 'junit.platform.output.capture.stderr', 'true'
+    systemProperties System.properties.findAll { k, v ->
+        k.toString().startsWith('serenity') || k.toString().startsWith('junit.jupiter')
+    }
+    systemProperty 'serenity.outputDirectory', 'target/site/serenity'
+    systemProperty 'serenity.use.unique.reports', 'true'
+    testLogging {
+        events 'passed', 'skipped', 'failed'
+        showStandardStreams = false
+    }
+    finalizedBy 'aggregate'
+}
+
+serenity {
+    sourceDirectory  = 'target/site/serenity'
+    outputDirectory  = 'target/site/serenity'
+    requirementsBaseDir = 'src/test/resources'   // FIX 4: align with actual sourceSets
+}
+
+tasks.named('aggregate').configure {
+    mustRunAfter test
+    outputs.upToDateWhen { false }               // FIX 5: typo 'upToDatellhen' → 'upToDateWhen'
+    doFirst {
+        logger.lifecycle '>>> Generating Serenity HTML report...'   // FIX 6: lowercase 'logger'
+    }
+    doLast {                                      // FIX 7: 'dolast' → 'doLast'
+        logger.lifecycle '>>> Serenity report: target/site/serenity/index.html'
+    }
+}
+
+tasks.register('serenityTest') {
+    group       = 'verification'
+    description = 'Runs tests and always generates the Serenity HTML report'
+    dependsOn test
+}
