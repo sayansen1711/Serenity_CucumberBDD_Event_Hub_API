@@ -1,0 +1,247 @@
+{
+  "name": "Successfully creating a user using User Registration API",
+  "id": "event-hub-authentication-api-test-cases;successfully-creating-a-user-using-user-registration-api",
+  "scenarioId": "classpath:features/Auth_Csv_Data:Successfully creating a user using User Registration API",
+  "methodName": "Successfully creating a user using User Registration API",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "1: Successfully creating a user using User Registration API ({testCaseId\u003dTC01, code\u003d201, message\u003dtrue})",
+      "duration": 4266,
+      "startTime": "2026-07-28T15:53:52.125161700+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 13,
+      "children": [
+        {
+          "number": 2,
+          "description": "Given an EventHub API is available",
+          "duration": 420,
+          "startTime": "2026-07-28T15:53:52.133271600+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 3,
+          "description": "And I build the request payload from CSV row \"TC01\" from file \"src/test/resources/testdata/payload_data.csv\"",
+          "duration": 281,
+          "startTime": "2026-07-28T15:53:52.599602300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 4,
+          "description": "When I send a POST request to \"/register\"",
+          "duration": 2638,
+          "startTime": "2026-07-28T15:53:52.881297+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 5,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-07-28T15:53:56.870271400+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"email\": \"joseph3@gmail.com\",\n    \"password\": \"ca3Qmeps\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Tue, 28 Jul 2026 10:23:55 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 260\r\nETag: W/\"104-4xyDl52MnL6RGTiBqxm34wKAwrM\"\r\nKeep-Alive: timeout\u003d5, max\u003d100\r\nConnection: Keep-Alive\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMzNzIxLCJlbWFpbCI6Impvc2VwaDNAZ21haWwuY29tIiwiaWF0IjoxNzg1MjM0MjM1LCJleHAiOjE3ODU4MzkwMzV9.HWTf2Ah37I7ti1o90g0WJRMpbuqjcFLqzNCCq4h89iM\",\n    \"user\": {\n        \"id\": 33721,\n        \"email\": \"joseph3@gmail.com\"\n    }\n}",
+                "statusCode": 201
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 6,
+          "description": "Then the status code should be 201",
+          "duration": 198,
+          "startTime": "2026-07-28T15:53:55.519479500+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 7,
+          "description": "And the response message should be \"true\"",
+          "duration": 643,
+          "startTime": "2026-07-28T15:53:55.717531800+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 8,
+          "description": "And a valid JWT token is generated",
+          "duration": 31,
+          "startTime": "2026-07-28T15:53:56.360660800+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "description": "2: Successfully creating a user using User Registration API ({testCaseId\u003dTC02, code\u003d201, message\u003dtrue})",
+      "duration": 414,
+      "startTime": "2026-07-28T15:53:56.416538400+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "lineNumber": 14,
+      "children": [
+        {
+          "number": 10,
+          "description": "Given an EventHub API is available",
+          "duration": 21,
+          "startTime": "2026-07-28T15:53:56.416538400+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 11,
+          "description": "And I build the request payload from CSV row \"TC02\" from file \"src/test/resources/testdata/payload_data.csv\"",
+          "duration": 9,
+          "startTime": "2026-07-28T15:53:56.438136300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 12,
+          "description": "When I send a POST request to \"/register\"",
+          "duration": 312,
+          "startTime": "2026-07-28T15:53:56.447890100+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1,
+          "children": [
+            {
+              "number": 13,
+              "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+              "duration": 0,
+              "startTime": "2026-07-28T15:53:56.900812400+05:30[Asia/Calcutta]",
+              "result": "SUCCESS",
+              "restQuery": {
+                "method": "POST",
+                "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/register",
+                "content": "{\n    \"email\": \"joseph4@gmail.com\",\n    \"password\": \"ca3Qmeps\"\n}",
+                "contentType": "application/json",
+                "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+                "requestCookies": "",
+                "responseHeaders": "Date: Tue, 28 Jul 2026 10:23:56 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 260\r\nETag: W/\"104-dyWlJgGzADO1Pg/0U785NY3Z5gs\"\r\nKeep-Alive: timeout\u003d5, max\u003d100\r\nConnection: Keep-Alive\r",
+                "responseCookies": "\r",
+                "responseBody": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjMzNzIyLCJlbWFpbCI6Impvc2VwaDRAZ21haWwuY29tIiwiaWF0IjoxNzg1MjM0MjM2LCJleHAiOjE3ODU4MzkwMzZ9.orBkGR4F9mUNLCtCbJJY0MQiZEbO4itqlBQi0UYn8Eg\",\n    \"user\": {\n        \"id\": 33722,\n        \"email\": \"joseph4@gmail.com\"\n    }\n}",
+                "statusCode": 201
+              },
+              "precondition": false,
+              "level": 2
+            }
+          ]
+        },
+        {
+          "number": 14,
+          "description": "Then the status code should be 201",
+          "duration": 7,
+          "startTime": "2026-07-28T15:53:56.760292800+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 15,
+          "description": "And the response message should be \"true\"",
+          "duration": 30,
+          "startTime": "2026-07-28T15:53:56.767575+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        },
+        {
+          "number": 16,
+          "description": "And a valid JWT token is generated",
+          "duration": 31,
+          "startTime": "2026-07-28T15:53:56.799340200+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    }
+  ],
+  "userStory": {
+    "id": "classpath:features/Auth_Csv_Data",
+    "storyName": "Event Hub Authentication API Test Cases",
+    "displayName": "Event Hub Authentication API Test Cases",
+    "path": "Auth_Csv_Data",
+    "pathElements": [
+      {
+        "name": "Auth_Csv_Data",
+        "description": ""
+      }
+    ],
+    "type": "feature"
+  },
+  "title": "Successfully creating a user using User Registration API",
+  "description": "",
+  "startTime": "2026-07-28T15:53:52.111538700+05:30[Asia/Calcutta]",
+  "endTime": "2026-07-28T15:53:56.831144+05:30[Asia/Calcutta]",
+  "duration": 4758,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "dataTable": {
+    "headers": [
+      "testCaseId",
+      "code",
+      "message"
+    ],
+    "rows": [
+      {
+        "values": [
+          "TC01",
+          "201",
+          "true"
+        ],
+        "lineNumber": 13,
+        "result": "SUCCESS"
+      },
+      {
+        "values": [
+          "TC02",
+          "201",
+          "true"
+        ],
+        "lineNumber": 14,
+        "result": "SUCCESS"
+      }
+    ],
+    "predefinedRows": true,
+    "scenarioOutline": "Given an EventHub API is available\n\rAnd I build the request payload from CSV row \"\u003ctestCaseId\u003e\" from file \"src/test/resources/testdata/payload_data.csv\"\n\rWhen I send a POST request to \"/register\"\n\rThen the status code should be \u003ccode\u003e\n\rAnd the response message should be \"\u003cmessage\u003e\"\n\rAnd a valid JWT token is generated\n\r",
+    "dataSetDescriptors": [
+      {
+        "startRow": 0,
+        "rowCount": 0,
+        "name": "",
+        "description": ""
+      }
+    ]
+  },
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS",
+  "scenarioOutline": "Given an EventHub API is available\r\nAnd I build the request payload from CSV row \"\u003ctestCaseId\u003e\" from file \"src/test/resources/testdata/payload_data.csv\"\r\nWhen I send a POST request to \"/register\"\r\nThen the status code should be \u003ccode\u003e\r\nAnd the response message should be \"\u003cmessage\u003e\"\r\nAnd a valid JWT token is generated"
+}

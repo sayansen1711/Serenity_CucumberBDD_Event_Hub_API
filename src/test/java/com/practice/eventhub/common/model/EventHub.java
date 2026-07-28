@@ -25,6 +25,16 @@ public class EventHub {
                 .when().post(endpoint);
         then().log().all().extract().response().asString();
     }
+    public void callApi(String endpoint, String payload, RequestSpecification requestSpecification) {
+        rest()
+                .given()
+                .spec(requestSpecification)
+//                .header("content-type", "application/json")
+//                .header("Accept", "application/json")
+                .body(payload).log().all()
+                .when().post(endpoint);
+        then().log().all().extract().response().asString();
+    }
 
     public void validateResponseForEventHub(int returnCode, String returnMessage) {
         Assertions.assertEquals(returnCode, then().extract().response().getStatusCode());
@@ -61,5 +71,14 @@ public class EventHub {
                 Assertions.assertEquals(messages[i], details.get(i).get("message"), "Assertion Failed: Message Field");
             }
         }
+    }
+
+    public void validateResponseCode(int expectedCode){
+        Assertions.assertEquals(expectedCode, then().extract().statusCode(), "Assertion Failed: Invalid Response Code");
+    }
+
+    public void validateResponseMessage(String expectedMessage){
+        Assertions.assertEquals(Boolean.parseBoolean(expectedMessage),
+                then().extract().response().jsonPath().getBoolean("success"));
     }
 }

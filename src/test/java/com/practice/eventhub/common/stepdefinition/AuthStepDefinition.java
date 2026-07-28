@@ -2,6 +2,7 @@ package com.practice.eventhub.common.stepdefinition;
 
 import com.practice.eventhub.common.model.EventHub;
 import com.practice.eventhub.common.util.LoadTestData;
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -21,6 +22,8 @@ public class AuthStepDefinition {
     private LoadTestData  loadTestData;
 
     protected HashMap<String, String> payload;
+
+    protected String payLoadBody;
 
     private RequestSpecification requestSpecification;
 
@@ -50,7 +53,7 @@ public class AuthStepDefinition {
         eventHub.validateResponseForEventHub(returnCode, message);
     }
 
-    @And("validate a JWT token is generated")
+    @And("a valid JWT token is generated")
     public void validateAJWTTokenIsGenerated() {
         eventHub.validateJwtTokenIsGenerated();
     }
@@ -69,5 +72,28 @@ public class AuthStepDefinition {
     @And("validate details {string} message is {string}")
     public void validateDetailsMessageIs(String field, String message) {
         eventHub.detailsBodyValidation(field, message);
+    }
+
+    @And("I build the request payload from CSV row {string} from file {string}")
+    public void iBuildTheRequestPayloadFromCSVRowFromFile(String testCaseId, String fileName) {
+        payLoadBody=loadTestData.csvToJson("Test_Case_Id",testCaseId, fileName);
+    }
+
+    @When("I send a POST request to {string}")
+    public void iSendAPOSTRequestTo(String request) {
+        // Write code here that turns the phrase above into concrete actions
+        eventHub.callApi(request, payLoadBody, requestSpecification);
+    }
+
+    @Then("the status code should be {int}")
+    public void theStatusCodeShouldBe(int code) {
+        // Write code here that turns the phrase above into concrete actions
+        eventHub.validateResponseCode(code);
+    }
+
+    @And("the response message should be {string}")
+    public void theResponseMessageShouldBe(String message) {
+        // Write code here that turns the phrase above into concrete actions
+        eventHub.validateResponseMessage(message);
     }
 }

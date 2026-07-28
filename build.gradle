@@ -53,6 +53,9 @@ dependencies {
     // Jackson
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
 
+    // Source: https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-csv
+    testImplementation("tools.jackson.dataformat:jackson-dataformat-csv:3.2.1")
+
     // Lombok
     compileOnly           'org.projectlombok:lombok:1.18.34'
     annotationProcessor   'org.projectlombok:lombok:1.18.34'

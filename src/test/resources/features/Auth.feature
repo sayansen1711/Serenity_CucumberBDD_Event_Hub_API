@@ -6,7 +6,7 @@ Feature: Authentication Test Cases
     When a payload with fields "<email>" and "<password>" is passed
     And EventHub API is invoked with "<endpoint>"
     Then the API should pass with <returnCode>, "<message>"
-    And validate a JWT token is generated
+    And a valid JWT token is generated
 
     Examples:
       | endpoint | email           | password | returnCode | message |
@@ -37,7 +37,7 @@ Feature: Authentication Test Cases
     When a payload with fields "<email>" and "<password>" is passed
     And EventHub API is invoked with "<endpoint>"
     Then the API should pass with <returnCode>, "<message>"
-    And validate a JWT token is generated
+    And a valid JWT token is generated
 
     Examples:
       | endpoint | email               | password  | returnCode | message |
