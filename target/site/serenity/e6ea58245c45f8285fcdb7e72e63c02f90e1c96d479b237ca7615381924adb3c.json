@@ -7,8 +7,8 @@
     {
       "number": 1,
       "description": "1: Validate negative test cases for User Registration API ({endpoint\u003dregister, email\u003djohn1401@gmail.com, password\u003dca3Qmeps, returnCode\u003d400, success\u003dfalse, error\u003dEmail already registered, field\u003d, message\u003d})",
-      "duration": 346,
-      "startTime": "2026-06-29T03:26:37.461516900+05:30[Asia/Calcutta]",
+      "duration": 356,
+      "startTime": "2026-07-28T13:10:37.859021600+05:30[Asia/Calcutta]",
       "result": "SUCCESS",
       "precondition": false,
       "level": 0,
@@ -17,8 +17,8 @@
         {
           "number": 2,
           "description": "Given an EventHub API is available",
-          "duration": 9,
-          "startTime": "2026-06-29T03:26:37.461516900+05:30[Asia/Calcutta]",
+          "duration": 13,
+          "startTime": "2026-07-28T13:10:37.859021600+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -26,8 +26,8 @@
         {
           "number": 3,
           "description": "When a payload with fields \"john1401@gmail.com\" and \"ca3Qmeps\" is passed",
-          "duration": 17,
-          "startTime": "2026-06-29T03:26:37.470681500+05:30[Asia/Calcutta]",
+          "duration": 26,
+          "startTime": "2026-07-28T13:10:37.872795800+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -35,8 +35,8 @@
         {
           "number": 4,
           "description": "And EventHub API is invoked with \"register\"",
-          "duration": 212,
-          "startTime": "2026-06-29T03:26:37.488575700+05:30[Asia/Calcutta]",
+          "duration": 210,
+          "startTime": "2026-07-28T13:10:37.899748300+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1,
@@ -45,7 +45,7 @@
               "number": 5,
               "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
               "duration": 0,
-              "startTime": "2026-06-29T03:26:41.253719400+05:30[Asia/Calcutta]",
+              "startTime": "2026-07-28T13:10:41.856686200+05:30[Asia/Calcutta]",
               "result": "SUCCESS",
               "restQuery": {
                 "method": "POST",
@@ -54,7 +54,7 @@
                 "contentType": "application/json",
                 "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
                 "requestCookies": "",
-                "responseHeaders": "Date: Sun, 28 Jun 2026 21:56:37 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 65\r\nETag: W/\"41-NXXV5luJg781QlBKLQbQgu0cRfs\"\r\nConnection: close\r",
+                "responseHeaders": "Date: Tue, 28 Jul 2026 07:40:38 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 65\r\nETag: W/\"41-NXXV5luJg781QlBKLQbQgu0cRfs\"\r\nConnection: close\r",
                 "responseCookies": "\r",
                 "responseBody": "{\n    \"success\": false,\n    \"error\": \"Email already registered\",\n    \"details\": [\n        \n    ]\n}",
                 "statusCode": 400
@@ -67,8 +67,8 @@
         {
           "number": 6,
           "description": "Then the API should fail with 400, \"false\"",
-          "duration": 49,
-          "startTime": "2026-06-29T03:26:37.703318200+05:30[Asia/Calcutta]",
+          "duration": 23,
+          "startTime": "2026-07-28T13:10:38.110089+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -76,8 +76,8 @@
         {
           "number": 7,
           "description": "And validate an \"Email already registered\" is displayed",
-          "duration": 29,
-          "startTime": "2026-06-29T03:26:37.752662700+05:30[Asia/Calcutta]",
+          "duration": 34,
+          "startTime": "2026-07-28T13:10:38.135957600+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -85,8 +85,8 @@
         {
           "number": 8,
           "description": "And validate details \"\" message is \"\"",
-          "duration": 11,
-          "startTime": "2026-06-29T03:26:37.788696800+05:30[Asia/Calcutta]",
+          "duration": 42,
+          "startTime": "2026-07-28T13:10:38.170445700+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -96,8 +96,8 @@
     {
       "number": 9,
       "description": "2: Validate negative test cases for User Registration API ({endpoint\u003dregister, email\u003djohn151, password\u003dca3Qmeps, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003demail, message\u003dA valid email is required})",
-      "duration": 327,
-      "startTime": "2026-06-29T03:26:37.809033+05:30[Asia/Calcutta]",
+      "duration": 352,
+      "startTime": "2026-07-28T13:10:38.222153100+05:30[Asia/Calcutta]",
       "result": "SUCCESS",
       "precondition": false,
       "level": 0,
@@ -106,8 +106,8 @@
         {
           "number": 10,
           "description": "Given an EventHub API is available",
-          "duration": 9,
-          "startTime": "2026-06-29T03:26:37.812593500+05:30[Asia/Calcutta]",
+          "duration": 13,
+          "startTime": "2026-07-28T13:10:38.222827500+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -115,8 +115,8 @@
         {
           "number": 11,
           "description": "When a payload with fields \"john151\" and \"ca3Qmeps\" is passed",
-          "duration": 15,
-          "startTime": "2026-06-29T03:26:37.822477300+05:30[Asia/Calcutta]",
+          "duration": 26,
+          "startTime": "2026-07-28T13:10:38.241207700+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -124,8 +124,8 @@
         {
           "number": 12,
           "description": "And EventHub API is invoked with \"register\"",
-          "duration": 194,
-          "startTime": "2026-06-29T03:26:37.837780200+05:30[Asia/Calcutta]",
+          "duration": 199,
+          "startTime": "2026-07-28T13:10:38.269301500+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1,
@@ -134,7 +134,7 @@
               "number": 13,
               "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
               "duration": 0,
-              "startTime": "2026-06-29T03:26:41.270758300+05:30[Asia/Calcutta]",
+              "startTime": "2026-07-28T13:10:41.877241100+05:30[Asia/Calcutta]",
               "result": "SUCCESS",
               "restQuery": {
                 "method": "POST",
@@ -143,7 +143,7 @@
                 "contentType": "application/json",
                 "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
                 "requestCookies": "",
-                "responseHeaders": "Date: Sun, 28 Jun 2026 21:56:37 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 113\r\nETag: W/\"71-yUJwjOIYVuoIjUdOz9uUDH1Rdwo\"\r\nConnection: close\r",
+                "responseHeaders": "Date: Tue, 28 Jul 2026 07:40:38 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 113\r\nETag: W/\"71-yUJwjOIYVuoIjUdOz9uUDH1Rdwo\"\r\nConnection: close\r",
                 "responseCookies": "\r",
                 "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"A valid email is required\"\n        }\n    ]\n}",
                 "statusCode": 400
@@ -156,8 +156,8 @@
         {
           "number": 14,
           "description": "Then the API should fail with 400, \"false\"",
-          "duration": 16,
-          "startTime": "2026-06-29T03:26:38.032505+05:30[Asia/Calcutta]",
+          "duration": 10,
+          "startTime": "2026-07-28T13:10:38.469029400+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -165,8 +165,8 @@
         {
           "number": 15,
           "description": "And validate an \"Validation failed\" is displayed",
-          "duration": 22,
-          "startTime": "2026-06-29T03:26:38.048812200+05:30[Asia/Calcutta]",
+          "duration": 15,
+          "startTime": "2026-07-28T13:10:38.479821700+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -174,8 +174,8 @@
         {
           "number": 16,
           "description": "And validate details \"email\" message is \"A valid email is required\"",
-          "duration": 63,
-          "startTime": "2026-06-29T03:26:38.071102100+05:30[Asia/Calcutta]",
+          "duration": 77,
+          "startTime": "2026-07-28T13:10:38.495666+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -185,8 +185,8 @@
     {
       "number": 17,
       "description": "3: Validate negative test cases for User Registration API ({endpoint\u003dregister, email\u003djohn1801@gmail.com, password\u003d, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003dpassword, message\u003dPassword must be at least 6 characters})",
-      "duration": 284,
-      "startTime": "2026-06-29T03:26:38.144580300+05:30[Asia/Calcutta]",
+      "duration": 315,
+      "startTime": "2026-07-28T13:10:38.587866100+05:30[Asia/Calcutta]",
       "result": "SUCCESS",
       "precondition": false,
       "level": 0,
@@ -195,8 +195,8 @@
         {
           "number": 18,
           "description": "Given an EventHub API is available",
-          "duration": 18,
-          "startTime": "2026-06-29T03:26:38.145673+05:30[Asia/Calcutta]",
+          "duration": 25,
+          "startTime": "2026-07-28T13:10:38.588539800+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -204,8 +204,8 @@
         {
           "number": 19,
           "description": "When a payload with fields \"john1801@gmail.com\" and \"\" is passed",
-          "duration": 25,
-          "startTime": "2026-06-29T03:26:38.164520500+05:30[Asia/Calcutta]",
+          "duration": 30,
+          "startTime": "2026-07-28T13:10:38.614502500+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -213,8 +213,8 @@
         {
           "number": 20,
           "description": "And EventHub API is invoked with \"register\"",
-          "duration": 178,
-          "startTime": "2026-06-29T03:26:38.189799300+05:30[Asia/Calcutta]",
+          "duration": 175,
+          "startTime": "2026-07-28T13:10:38.645337700+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1,
@@ -223,7 +223,7 @@
               "number": 21,
               "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
               "duration": 0,
-              "startTime": "2026-06-29T03:26:41.286623400+05:30[Asia/Calcutta]",
+              "startTime": "2026-07-28T13:10:41.904956100+05:30[Asia/Calcutta]",
               "result": "SUCCESS",
               "restQuery": {
                 "method": "POST",
@@ -232,7 +232,7 @@
                 "contentType": "application/json",
                 "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
                 "requestCookies": "",
-                "responseHeaders": "Date: Sun, 28 Jun 2026 21:56:37 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 129\r\nETag: W/\"81-AQGOfbJn5khNCm8RDj0jRHdfydY\"\r\nConnection: close\r",
+                "responseHeaders": "Date: Tue, 28 Jul 2026 07:40:38 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 129\r\nETag: W/\"81-AQGOfbJn5khNCm8RDj0jRHdfydY\"\r\nConnection: close\r",
                 "responseCookies": "\r",
                 "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"password\",\n            \"message\": \"Password must be at least 6 characters\"\n        }\n    ]\n}",
                 "statusCode": 400
@@ -245,8 +245,8 @@
         {
           "number": 22,
           "description": "Then the API should fail with 400, \"false\"",
-          "duration": 23,
-          "startTime": "2026-06-29T03:26:38.368749300+05:30[Asia/Calcutta]",
+          "duration": 22,
+          "startTime": "2026-07-28T13:10:38.823044300+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -254,8 +254,8 @@
         {
           "number": 23,
           "description": "And validate an \"Validation failed\" is displayed",
-          "duration": 8,
-          "startTime": "2026-06-29T03:26:38.391786600+05:30[Asia/Calcutta]",
+          "duration": 22,
+          "startTime": "2026-07-28T13:10:38.845603400+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -263,8 +263,8 @@
         {
           "number": 24,
           "description": "And validate details \"password\" message is \"Password must be at least 6 characters\"",
-          "duration": 28,
-          "startTime": "2026-06-29T03:26:38.400226+05:30[Asia/Calcutta]",
+          "duration": 33,
+          "startTime": "2026-07-28T13:10:38.870560900+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -274,8 +274,8 @@
     {
       "number": 25,
       "description": "4: Validate negative test cases for User Registration API ({endpoint\u003dregister, email\u003djohn1801@gmail.com, password\u003dpassw, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003dpassword, message\u003dPassword must be at least 6 characters})",
-      "duration": 299,
-      "startTime": "2026-06-29T03:26:38.432554100+05:30[Asia/Calcutta]",
+      "duration": 294,
+      "startTime": "2026-07-28T13:10:38.913514+05:30[Asia/Calcutta]",
       "result": "SUCCESS",
       "precondition": false,
       "level": 0,
@@ -284,8 +284,8 @@
         {
           "number": 26,
           "description": "Given an EventHub API is available",
-          "duration": 9,
-          "startTime": "2026-06-29T03:26:38.432554100+05:30[Asia/Calcutta]",
+          "duration": 10,
+          "startTime": "2026-07-28T13:10:38.916547+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -293,8 +293,8 @@
         {
           "number": 27,
           "description": "When a payload with fields \"john1801@gmail.com\" and \"passw\" is passed",
-          "duration": 15,
-          "startTime": "2026-06-29T03:26:38.441894+05:30[Asia/Calcutta]",
+          "duration": 16,
+          "startTime": "2026-07-28T13:10:38.929209100+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -302,8 +302,8 @@
         {
           "number": 28,
           "description": "And EventHub API is invoked with \"register\"",
-          "duration": 178,
-          "startTime": "2026-06-29T03:26:38.458888300+05:30[Asia/Calcutta]",
+          "duration": 169,
+          "startTime": "2026-07-28T13:10:38.946079+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1,
@@ -312,7 +312,7 @@
               "number": 29,
               "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
               "duration": 0,
-              "startTime": "2026-06-29T03:26:41.294672500+05:30[Asia/Calcutta]",
+              "startTime": "2026-07-28T13:10:41.919293700+05:30[Asia/Calcutta]",
               "result": "SUCCESS",
               "restQuery": {
                 "method": "POST",
@@ -321,7 +321,7 @@
                 "contentType": "application/json",
                 "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
                 "requestCookies": "",
-                "responseHeaders": "Date: Sun, 28 Jun 2026 21:56:38 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 129\r\nETag: W/\"81-AQGOfbJn5khNCm8RDj0jRHdfydY\"\r\nConnection: close\r",
+                "responseHeaders": "Date: Tue, 28 Jul 2026 07:40:39 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 129\r\nETag: W/\"81-AQGOfbJn5khNCm8RDj0jRHdfydY\"\r\nConnection: close\r",
                 "responseCookies": "\r",
                 "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"password\",\n            \"message\": \"Password must be at least 6 characters\"\n        }\n    ]\n}",
                 "statusCode": 400
@@ -334,8 +334,8 @@
         {
           "number": 30,
           "description": "Then the API should fail with 400, \"false\"",
-          "duration": 47,
-          "startTime": "2026-06-29T03:26:38.640898300+05:30[Asia/Calcutta]",
+          "duration": 35,
+          "startTime": "2026-07-28T13:10:39.115149300+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -343,8 +343,8 @@
         {
           "number": 31,
           "description": "And validate an \"Validation failed\" is displayed",
-          "duration": 17,
-          "startTime": "2026-06-29T03:26:38.690821700+05:30[Asia/Calcutta]",
+          "duration": 21,
+          "startTime": "2026-07-28T13:10:39.152873+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -352,8 +352,8 @@
         {
           "number": 32,
           "description": "And validate details \"password\" message is \"Password must be at least 6 characters\"",
-          "duration": 22,
-          "startTime": "2026-06-29T03:26:38.707928600+05:30[Asia/Calcutta]",
+          "duration": 29,
+          "startTime": "2026-07-28T13:10:39.176419100+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -363,8 +363,8 @@
     {
       "number": 33,
       "description": "5: Validate negative test cases for User Registration API ({endpoint\u003dregister, email\u003djohn1801, password\u003dpassw, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003demail, password, message\u003dA valid email is required, Password must be at least 6 characters})",
-      "duration": 354,
-      "startTime": "2026-06-29T03:26:38.733766500+05:30[Asia/Calcutta]",
+      "duration": 317,
+      "startTime": "2026-07-28T13:10:39.215671500+05:30[Asia/Calcutta]",
       "result": "SUCCESS",
       "precondition": false,
       "level": 0,
@@ -373,8 +373,8 @@
         {
           "number": 34,
           "description": "Given an EventHub API is available",
-          "duration": 7,
-          "startTime": "2026-06-29T03:26:38.737967400+05:30[Asia/Calcutta]",
+          "duration": 15,
+          "startTime": "2026-07-28T13:10:39.219983400+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -382,8 +382,8 @@
         {
           "number": 35,
           "description": "When a payload with fields \"john1801\" and \"passw\" is passed",
-          "duration": 25,
-          "startTime": "2026-06-29T03:26:38.745705400+05:30[Asia/Calcutta]",
+          "duration": 29,
+          "startTime": "2026-07-28T13:10:39.239088+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -391,8 +391,8 @@
         {
           "number": 36,
           "description": "And EventHub API is invoked with \"register\"",
-          "duration": 214,
-          "startTime": "2026-06-29T03:26:38.773611300+05:30[Asia/Calcutta]",
+          "duration": 192,
+          "startTime": "2026-07-28T13:10:39.270651400+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1,
@@ -401,7 +401,7 @@
               "number": 37,
               "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
               "duration": 0,
-              "startTime": "2026-06-29T03:26:41.322450700+05:30[Asia/Calcutta]",
+              "startTime": "2026-07-28T13:10:41.960309600+05:30[Asia/Calcutta]",
               "result": "SUCCESS",
               "restQuery": {
                 "method": "POST",
@@ -410,7 +410,7 @@
                 "contentType": "application/json",
                 "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
                 "requestCookies": "",
-                "responseHeaders": "Date: Sun, 28 Jun 2026 21:56:38 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 185\r\nETag: W/\"b9-ZSIqYyoUFrODpbbHL6X9a0KYZXY\"\r\nConnection: close\r",
+                "responseHeaders": "Date: Tue, 28 Jul 2026 07:40:39 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 185\r\nETag: W/\"b9-ZSIqYyoUFrODpbbHL6X9a0KYZXY\"\r\nConnection: close\r",
                 "responseCookies": "\r",
                 "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"A valid email is required\"\n        },\n        {\n            \"field\": \"password\",\n            \"message\": \"Password must be at least 6 characters\"\n        }\n    ]\n}",
                 "statusCode": 400
@@ -423,8 +423,8 @@
         {
           "number": 38,
           "description": "Then the API should fail with 400, \"false\"",
-          "duration": 52,
-          "startTime": "2026-06-29T03:26:38.988813700+05:30[Asia/Calcutta]",
+          "duration": 13,
+          "startTime": "2026-07-28T13:10:39.478567500+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -432,8 +432,8 @@
         {
           "number": 39,
           "description": "And validate an \"Validation failed\" is displayed",
-          "duration": 29,
-          "startTime": "2026-06-29T03:26:39.040981600+05:30[Asia/Calcutta]",
+          "duration": 8,
+          "startTime": "2026-07-28T13:10:39.492375100+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -441,8 +441,8 @@
         {
           "number": 40,
           "description": "And validate details \"email, password\" message is \"A valid email is required, Password must be at least 6 characters\"",
-          "duration": 18,
-          "startTime": "2026-06-29T03:26:39.070391300+05:30[Asia/Calcutta]",
+          "duration": 30,
+          "startTime": "2026-07-28T13:10:39.501117200+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -452,8 +452,8 @@
     {
       "number": 41,
       "description": "6: Validate negative test cases for User Registration API ({endpoint\u003dregister, email\u003d, password\u003d, returnCode\u003d400, success\u003dfalse, error\u003dValidation failed, field\u003demail, password, message\u003dA valid email is required, Password must be at least 6 characters})",
-      "duration": 230,
-      "startTime": "2026-06-29T03:26:39.097953400+05:30[Asia/Calcutta]",
+      "duration": 316,
+      "startTime": "2026-07-28T13:10:39.543564100+05:30[Asia/Calcutta]",
       "result": "SUCCESS",
       "precondition": false,
       "level": 0,
@@ -462,8 +462,8 @@
         {
           "number": 42,
           "description": "Given an EventHub API is available",
-          "duration": 9,
-          "startTime": "2026-06-29T03:26:39.098955500+05:30[Asia/Calcutta]",
+          "duration": 11,
+          "startTime": "2026-07-28T13:10:39.545571200+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -471,8 +471,8 @@
         {
           "number": 43,
           "description": "When a payload with fields \"\" and \"\" is passed",
-          "duration": 14,
-          "startTime": "2026-06-29T03:26:39.108850+05:30[Asia/Calcutta]",
+          "duration": 24,
+          "startTime": "2026-07-28T13:10:39.559383300+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -480,8 +480,8 @@
         {
           "number": 44,
           "description": "And EventHub API is invoked with \"register\"",
-          "duration": 168,
-          "startTime": "2026-06-29T03:26:39.127063100+05:30[Asia/Calcutta]",
+          "duration": 219,
+          "startTime": "2026-07-28T13:10:39.586201400+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1,
@@ -490,7 +490,7 @@
               "number": 45,
               "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/register",
               "duration": 0,
-              "startTime": "2026-06-29T03:26:41.334357800+05:30[Asia/Calcutta]",
+              "startTime": "2026-07-28T13:10:41.987887+05:30[Asia/Calcutta]",
               "result": "SUCCESS",
               "restQuery": {
                 "method": "POST",
@@ -499,7 +499,7 @@
                 "contentType": "application/json",
                 "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
                 "requestCookies": "",
-                "responseHeaders": "Date: Sun, 28 Jun 2026 21:56:38 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 185\r\nETag: W/\"b9-ZSIqYyoUFrODpbbHL6X9a0KYZXY\"\r\nConnection: close\r",
+                "responseHeaders": "Date: Tue, 28 Jul 2026 07:40:39 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 185\r\nETag: W/\"b9-ZSIqYyoUFrODpbbHL6X9a0KYZXY\"\r\nConnection: close\r",
                 "responseCookies": "\r",
                 "responseBody": "{\n    \"success\": false,\n    \"error\": \"Validation failed\",\n    \"details\": [\n        {\n            \"field\": \"email\",\n            \"message\": \"A valid email is required\"\n        },\n        {\n            \"field\": \"password\",\n            \"message\": \"Password must be at least 6 characters\"\n        }\n    ]\n}",
                 "statusCode": 400
@@ -512,8 +512,8 @@
         {
           "number": 46,
           "description": "Then the API should fail with 400, \"false\"",
-          "duration": 13,
-          "startTime": "2026-06-29T03:26:39.295578800+05:30[Asia/Calcutta]",
+          "duration": 18,
+          "startTime": "2026-07-28T13:10:39.805782600+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -521,8 +521,8 @@
         {
           "number": 47,
           "description": "And validate an \"Validation failed\" is displayed",
-          "duration": 11,
-          "startTime": "2026-06-29T03:26:39.308949800+05:30[Asia/Calcutta]",
+          "duration": 16,
+          "startTime": "2026-07-28T13:10:39.824703+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -530,8 +530,8 @@
         {
           "number": 48,
           "description": "And validate details \"email, password\" message is \"A valid email is required, Password must be at least 6 characters\"",
-          "duration": 8,
-          "startTime": "2026-06-29T03:26:39.320027200+05:30[Asia/Calcutta]",
+          "duration": 19,
+          "startTime": "2026-07-28T13:10:39.840818800+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -562,9 +562,9 @@
       "rawStringFromValueTag": "NegativeTestCase"
     }
   ],
-  "startTime": "2026-06-29T03:26:37.461516900+05:30[Asia/Calcutta]",
-  "endTime": "2026-06-29T03:26:39.328813800+05:30[Asia/Calcutta]",
-  "duration": 3792,
+  "startTime": "2026-07-28T13:10:37.857017100+05:30[Asia/Calcutta]",
+  "endTime": "2026-07-28T13:10:39.859856400+05:30[Asia/Calcutta]",
+  "duration": 3999,
   "projectKey": "",
   "isManualTestingUpToDate": false,
   "dataTable": {

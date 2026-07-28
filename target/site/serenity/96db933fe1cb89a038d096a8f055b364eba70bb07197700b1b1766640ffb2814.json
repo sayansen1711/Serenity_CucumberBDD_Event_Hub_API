@@ -7,8 +7,8 @@
     {
       "number": 1,
       "description": "1: Validate the positive cases for User Login API ({endpoint\u003dlogin, email\u003dstudent@example.com, password\u003dsecret123, returnCode\u003d200, message\u003dtrue})",
-      "duration": 303,
-      "startTime": "2026-06-29T03:26:39.336969+05:30[Asia/Calcutta]",
+      "duration": 327,
+      "startTime": "2026-07-28T13:10:39.867425+05:30[Asia/Calcutta]",
       "result": "SUCCESS",
       "precondition": false,
       "level": 0,
@@ -17,8 +17,8 @@
         {
           "number": 2,
           "description": "Given an EventHub API is available",
-          "duration": 2,
-          "startTime": "2026-06-29T03:26:39.337976200+05:30[Asia/Calcutta]",
+          "duration": 14,
+          "startTime": "2026-07-28T13:10:39.870436800+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -26,8 +26,8 @@
         {
           "number": 3,
           "description": "When a payload with fields \"student@example.com\" and \"secret123\" is passed",
-          "duration": 11,
-          "startTime": "2026-06-29T03:26:39.340227800+05:30[Asia/Calcutta]",
+          "duration": 17,
+          "startTime": "2026-07-28T13:10:39.884912200+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -35,8 +35,8 @@
         {
           "number": 4,
           "description": "And EventHub API is invoked with \"login\"",
-          "duration": 243,
-          "startTime": "2026-06-29T03:26:39.352166500+05:30[Asia/Calcutta]",
+          "duration": 248,
+          "startTime": "2026-07-28T13:10:39.902546700+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1,
@@ -45,7 +45,7 @@
               "number": 5,
               "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/login",
               "duration": 0,
-              "startTime": "2026-06-29T03:26:41.339933900+05:30[Asia/Calcutta]",
+              "startTime": "2026-07-28T13:10:42.001652300+05:30[Asia/Calcutta]",
               "result": "SUCCESS",
               "restQuery": {
                 "method": "POST",
@@ -54,9 +54,9 @@
                 "contentType": "application/json",
                 "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
                 "requestCookies": "",
-                "responseHeaders": "Date: Sun, 28 Jun 2026 21:56:38 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 256\r\nETag: W/\"100-Xo1oWYRCzQ4VKvlengSUR2T2Tfo\"\r\nKeep-Alive: timeout\u003d5, max\u003d100\r\nConnection: Keep-Alive\r",
+                "responseHeaders": "Date: Tue, 28 Jul 2026 07:40:40 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 256\r\nETag: W/\"100-AeYH0R7o9FHHYASmus6qayJGJi0\"\r\nKeep-Alive: timeout\u003d5, max\u003d100\r\nConnection: Keep-Alive\r",
                 "responseCookies": "\r",
-                "responseBody": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoic3R1ZGVudEBleGFtcGxlLmNvbSIsImlhdCI6MTc4MjY4Mzc5OSwiZXhwIjoxNzgzMjg4NTk5fQ.Qj8MsUlUEypi7qSghSDWpnZw5GXqSOnYHzhg00qwPXQ\",\n    \"user\": {\n        \"id\": 4,\n        \"email\": \"student@example.com\"\n    }\n}",
+                "responseBody": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsImVtYWlsIjoic3R1ZGVudEBleGFtcGxlLmNvbSIsImlhdCI6MTc4NTIyNDQ0MCwiZXhwIjoxNzg1ODI5MjQwfQ.BmSMPjmmArb0-nOLicrdkl_eM6sAllx-Pm4lAHXRxjU\",\n    \"user\": {\n        \"id\": 4,\n        \"email\": \"student@example.com\"\n    }\n}",
                 "statusCode": 200
               },
               "precondition": false,
@@ -68,7 +68,7 @@
           "number": 6,
           "description": "Then the API should pass with 200, \"true\"",
           "duration": 10,
-          "startTime": "2026-06-29T03:26:39.597907300+05:30[Asia/Calcutta]",
+          "startTime": "2026-07-28T13:10:40.150747500+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -76,8 +76,8 @@
         {
           "number": 7,
           "description": "And validate a JWT token is generated",
-          "duration": 31,
-          "startTime": "2026-06-29T03:26:39.608666100+05:30[Asia/Calcutta]",
+          "duration": 33,
+          "startTime": "2026-07-28T13:10:40.161109500+05:30[Asia/Calcutta]",
           "result": "SUCCESS",
           "precondition": false,
           "level": 1
@@ -108,9 +108,9 @@
       "rawStringFromValueTag": "LoginTestCase"
     }
   ],
-  "startTime": "2026-06-29T03:26:39.336533300+05:30[Asia/Calcutta]",
-  "endTime": "2026-06-29T03:26:39.640163100+05:30[Asia/Calcutta]",
-  "duration": 2003,
+  "startTime": "2026-07-28T13:10:39.867425+05:30[Asia/Calcutta]",
+  "endTime": "2026-07-28T13:10:40.195057900+05:30[Asia/Calcutta]",
+  "duration": 2134,
   "projectKey": "",
   "isManualTestingUpToDate": false,
   "dataTable": {

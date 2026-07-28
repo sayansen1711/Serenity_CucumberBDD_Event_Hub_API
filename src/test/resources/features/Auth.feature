@@ -10,8 +10,8 @@ Feature: Authentication Test Cases
 
     Examples:
       | endpoint | email           | password | returnCode | message |
-      | register | john3@gmail.com | ca3Qmeps | 201        | true    |
-      | register | john4@gmail.com | ca3Qmeps | 201        | true    |
+      | register | joseph1@gmail.com | ca3Qmeps | 201        | true    |
+      | register | joseph2@gmail.com | ca3Qmeps | 201        | true    |
 
   @NegativeTestCase
   Scenario Outline: Validate negative test cases for User Registration API

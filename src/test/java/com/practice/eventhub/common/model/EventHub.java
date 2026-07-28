@@ -1,6 +1,7 @@
 package com.practice.eventhub.common.model;
 
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import net.serenitybdd.rest.SerenityRest;
 import org.junit.jupiter.api.Assertions;
 
@@ -13,12 +14,13 @@ import static net.serenitybdd.rest.SerenityRest.then;
 
 public class EventHub {
 
-    public void callApi(String endpoint, HashMap<String, String> payload) {
+    public void callApi(String endpoint, HashMap<String, String> payload, RequestSpecification requestSpecification) {
         System.out.println("EventHub API is invoked with " + endpoint);
         rest()
                 .given()
-                .header("content-type", "application/json")
-                .header("Accept", "application/json")
+                .spec(requestSpecification)
+//                .header("content-type", "application/json")
+//                .header("Accept", "application/json")
                 .body(payload).log().all()
                 .when().post(endpoint);
         then().log().all().extract().response().asString();
@@ -30,7 +32,7 @@ public class EventHub {
                 then().extract().response().jsonPath().getBoolean("success"));
     }
 
-    public void printJwtToken() {
+    public void validateJwtTokenIsGenerated() {
         Assertions.assertNotNull(then().extract().jsonPath().getString("token"), "JWT Token not generated");
         Assertions.assertNotNull(then().extract().jsonPath().getString("user.id"), "User ID not generated");
     }
