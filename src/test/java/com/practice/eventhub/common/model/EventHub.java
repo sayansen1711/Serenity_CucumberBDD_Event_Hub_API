@@ -13,6 +13,7 @@ import static net.serenitybdd.rest.SerenityRest.rest;
 import static net.serenitybdd.rest.SerenityRest.then;
 
 public class EventHub {
+    private String JWT_TOKEN;
 
     public void callApi(String endpoint, String payload, RequestSpecification requestSpecification) {
         rest()
@@ -22,7 +23,8 @@ public class EventHub {
 //                .header("Accept", "application/json")
                 .body(payload).log().all()
                 .when().post(endpoint);
-        then().log().all().extract().response().asString();
+//        System.out.println("***Response:"+then().log().all().extract().response().asString());
+        JWT_TOKEN = then().extract().body().jsonPath().getString("token");
     }
 
     public void validateJwtTokenIsGenerated() {
@@ -35,20 +37,20 @@ public class EventHub {
         Assertions.assertEquals(expectedMessage, response.jsonPath().getString("error"), "Error Message Assertion Failed");
     }
 
-    public void detailsBodyValidation(String field, String expectedMessage){
+    public void detailsBodyValidation(String field, String expectedMessage) {
         Response response = SerenityRest.lastResponse();
         List<Map<String, String>> details = response.jsonPath().getList("details");
-        if(field.isBlank() && expectedMessage.isBlank()){
-           Assertions.assertTrue(details.isEmpty(),"Assertion Failed: Details object is not empty");
-        } else if(field.equals("email")){
-            Assertions.assertEquals(expectedMessage,response.jsonPath().getString("details[0].message"),"Assertion Failed: Email Field");
-        } else if(field.equals("password")){
-            Assertions.assertEquals(expectedMessage, response.jsonPath().getString("details[0].message"),"Assertion Failed: Password Field");
-        } else{
-            String[] fields =field.split(", ");
-            String[] messages =expectedMessage.split(", ");
-            Assertions.assertEquals(fields.length,messages.length,"Assertion Failed: Invalid Fields Length");
-            for(int i=0;i<fields.length;i++){
+        if (field.isBlank() && expectedMessage.isBlank()) {
+            Assertions.assertTrue(details.isEmpty(), "Assertion Failed: Details object is not empty");
+        } else if (field.equals("email")) {
+            Assertions.assertEquals(expectedMessage, response.jsonPath().getString("details[0].message"), "Assertion Failed: Email Field");
+        } else if (field.equals("password")) {
+            Assertions.assertEquals(expectedMessage, response.jsonPath().getString("details[0].message"), "Assertion Failed: Password Field");
+        } else {
+            String[] fields = field.split(", ");
+            String[] messages = expectedMessage.split(", ");
+            Assertions.assertEquals(fields.length, messages.length, "Assertion Failed: Invalid Fields Length");
+            for (int i = 0; i < fields.length; i++) {
 //                System.out.println(fields[i]+"\t"+messages[i]);
                 Assertions.assertEquals(fields[i], details.get(i).get("field"), "Assertion Failed: Invalid Field");
                 Assertions.assertEquals(messages[i], details.get(i).get("message"), "Assertion Failed: Message Field");
@@ -56,12 +58,27 @@ public class EventHub {
         }
     }
 
-    public void validateResponseCode(int expectedCode){
+    public void validateResponseCode(int expectedCode) {
         Assertions.assertEquals(expectedCode, then().extract().statusCode(), "Assertion Failed: Invalid Response Code");
     }
 
-    public void validateResponseMessage(String expectedMessage){
+    public void validateResponseMessage(String expectedMessage) {
         Assertions.assertEquals(Boolean.parseBoolean(expectedMessage),
                 then().extract().response().jsonPath().getBoolean("success"));
+    }
+
+    public void callGetApi(String endpoint, RequestSpecification requestSpecification) {
+        rest().
+                given().
+                header("Authorization", "Bearer " + JWT_TOKEN).
+//                auth().oauth2(JWT_TOKEN).spec(requestSpecification).
+//        log().all().
+                when().get(endpoint);
+        then().log().all().extract().response().asString();
+    }
+
+    public void validateUserIdandEmail() {
+        Assertions.assertNotNull(then().extract().jsonPath().getString("user.userId"), "User ID not generated");
+        Assertions.assertNotNull(then().extract().jsonPath().getString("user.email"), "User Email not generated");
     }
 }
