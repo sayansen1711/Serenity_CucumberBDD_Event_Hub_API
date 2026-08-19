@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="EventHub API Authentication Login API" skipped="0" tests="7" time="7.25" timestamp="2026-08-19 08:01:42"><testcase name="Successfully log in an existing user with valid credentials"/><testcase name="Fail Login with Incorrect Credentials"/></testsuite>

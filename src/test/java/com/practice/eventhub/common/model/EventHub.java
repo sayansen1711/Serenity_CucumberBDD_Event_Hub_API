@@ -14,17 +14,6 @@ import static net.serenitybdd.rest.SerenityRest.then;
 
 public class EventHub {
 
-    public void callApi(String endpoint, HashMap<String, String> payload, RequestSpecification requestSpecification) {
-        System.out.println("EventHub API is invoked with " + endpoint);
-        rest()
-                .given()
-                .spec(requestSpecification)
-//                .header("content-type", "application/json")
-//                .header("Accept", "application/json")
-                .body(payload).log().all()
-                .when().post(endpoint);
-        then().log().all().extract().response().asString();
-    }
     public void callApi(String endpoint, String payload, RequestSpecification requestSpecification) {
         rest()
                 .given()
@@ -34,12 +23,6 @@ public class EventHub {
                 .body(payload).log().all()
                 .when().post(endpoint);
         then().log().all().extract().response().asString();
-    }
-
-    public void validateResponseForEventHub(int returnCode, String returnMessage) {
-        Assertions.assertEquals(returnCode, then().extract().response().getStatusCode());
-        Assertions.assertEquals(Boolean.parseBoolean(returnMessage),
-                then().extract().response().jsonPath().getBoolean("success"));
     }
 
     public void validateJwtTokenIsGenerated() {
