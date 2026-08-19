@@ -8,7 +8,7 @@ version = "1.0-SNAPSHOT"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(23)
     }
 }
 
@@ -23,7 +23,9 @@ ext {
     cucumberVersion        = '7.15.0'
     junitVersion           = '5.10.1'
     junitPlatformVersion   = '1.10.1'
-    slf4jVersion           = '2.0.11'
+    slf4jVersion           = '2.0.17'
+    jacksonVersion         = '2.16.1'
+    guavaVersion           = '33.5.0-jre'
 }
 
 dependencies {
@@ -51,10 +53,9 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured:5.4.0'
 
     // Jackson
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.16.1'
-
-    // Source: https://mvnrepository.com/artifact/tools.jackson.dataformat/jackson-dataformat-csv
-    testImplementation("tools.jackson.dataformat:jackson-dataformat-csv:3.2.1")
+    implementation     "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    testImplementation "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+    testImplementation "tools.jackson.dataformat:jackson-dataformat-csv:3.2.1"
 
     // Lombok
     compileOnly           'org.projectlombok:lombok:1.18.34'
@@ -67,8 +68,17 @@ dependencies {
     testRuntimeOnly "org.slf4j:slf4j-simple:${slf4jVersion}"
 
     // Utilities — FIX 3: removed space after colon in group ID
-    implementation 'com.google.guava:guava:33.0.0-jre'
+    implementation "com.google.guava:guava:${guavaVersion}"
     testImplementation 'org.assertj:assertj-core:3.25.3'
+}
+
+configurations.all{
+    resolutionStrategy {
+        force "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
+        force "com.fasterxml.jackson.core:jackson-core:${jacksonVersion}"
+        force "com.google.guava:guava:${guavaVersion}"
+        force "org.slf4j:slf4j-simple:${slf4jVersion}"
+    }
 }
 
 sourceSets {
@@ -82,7 +92,12 @@ sourceSets {
     }
 }
 
+tasks.register('cleanSerenityReports', Delete){
+    delete 'target/site/serenity'
+}
+
 test {
+    dependsOn cleanSerenityReports
     useJUnitPlatform()
     workingDir = project.projectDir
     systemProperty 'junit.platform.output.capture.stdout', 'true'
@@ -96,6 +111,7 @@ test {
         events 'passed', 'skipped', 'failed'
         showStandardStreams = false
     }
+    outputs.upToDateWhen {false}
     finalizedBy 'aggregate'
 }
 
@@ -120,4 +136,5 @@ tasks.register('serenityTest') {
     group       = 'verification'
     description = 'Runs tests and always generates the Serenity HTML report'
     dependsOn test
+    finalizedBy 'aggregate'
 }

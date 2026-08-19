@@ -14,6 +14,7 @@ import java.util.Map;
 
 public class LoadTestData {
     private final HashMap<String, String> payload = new HashMap<>();
+    private static final ObjectMapper mapper=new ObjectMapper();
 
     public void preparePayload(String key, String value) {
         payload.put(key, value);
@@ -24,6 +25,7 @@ public class LoadTestData {
     }
 
     public String csvToJson(String keyCol, String keyVal, String file) {
+        //try-with resources block to implement CLosable- to close parser and reader at the end of the block
         try (Reader reader = new FileReader(file);
              CSVParser parser = new CSVParser(reader, CSVFormat.DEFAULT.withFirstRecordAsHeader())) {
             List<Map<String, String>> rows = new ArrayList<>();
@@ -33,8 +35,11 @@ public class LoadTestData {
                     break;
                 }
             }
-            rows.getFirst().remove("Test_Case_Id");
-            ObjectMapper mapper = new ObjectMapper();
+//            System.out.println(rows);
+            if(rows.isEmpty()){
+                throw new IllegalArgumentException("No records found for "+keyVal);
+            }
+            rows.getFirst().remove(keyCol);
             return mapper.writeValueAsString(rows.getFirst());
         } catch (IOException e) {
             throw new UncheckedIOException("Failed to parse CSV " + file, e);
