@@ -1,1 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Authentication Test Cases" skipped="0" tests="8" time="6.44" timestamp="2026-06-29 02:40:14"><testcase name="Validating User Registration API"/><testcase name="Validate negative registration scenarios"/></testsuite>

@@ -9,7 +9,9 @@ import static io.cucumber.junit.platform.engine.Constants.*;
 
 @Suite
 @IncludeEngines("cucumber")
-@SelectClasspathResource("features/Auth_Csv_Data.feature")
+//@SelectClasspathResource("features/User_Registration_API.feature")
+@SelectClasspathResource("features/User_Login_A" +
+        "PI.feature")
 @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME,
         value="pretty, html:target/reports/serenity.html, net.serenitybdd.cucumber.core.plugin.SerenityReporterParallel")
 @ConfigurationParameter(key=GLUE_PROPERTY_NAME,

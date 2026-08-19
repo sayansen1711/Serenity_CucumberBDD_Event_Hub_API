@@ -1,0 +1,8 @@
+Test_Case_Id,email,password
+TC01,josh1@gmail.com,ca3Qmeps
+TC02,josh,ca3Qmeps
+TC03,,ca3Qmeps
+TC04,josh1@gmail.com,
+TC05,josh1@gmail.com,passw
+TC06,josh1,passw
+TC07,,

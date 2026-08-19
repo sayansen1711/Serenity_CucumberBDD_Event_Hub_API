@@ -37,30 +37,9 @@ public class AuthStepDefinition {
                 .build();
     }
 
-    @And("a payload with fields {string} and {string} is passed")
-    public void aPayloadWithFieldsAndIsPassed(String email, String password) {
-        loadTestData.preparePayload("email", email);
-        loadTestData.preparePayload("password", password);
-        payload = loadTestData.getPayload();
-    }
-    @When("EventHub API is invoked with {string}")
-    public void eventhubAPIIsInvokedWith(String endpoint) {
-        eventHub.callApi(endpoint, payload, requestSpecification);
-    }
-
-    @Then("the API should pass with {int}, {string}")
-    public void theRegistrationShouldPassWith(int returnCode, String message) {
-        eventHub.validateResponseForEventHub(returnCode, message);
-    }
-
     @And("a valid JWT token is generated")
     public void validateAJWTTokenIsGenerated() {
         eventHub.validateJwtTokenIsGenerated();
-    }
-
-    @Then("the API should fail with {int}, {string}")
-    public void theRegistrationShouldFailWithReturnCode(int returnCode, String success) {
-        eventHub.validateResponseForEventHub(returnCode, success);
     }
 
     @And("validate an {string} is displayed")
