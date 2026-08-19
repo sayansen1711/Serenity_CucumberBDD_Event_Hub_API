@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Fetch user details after authentication" skipped="0" tests="1" time="4.48" timestamp="2026-08-20 01:05:41"><testcase name="Successfully fetch user profile after a successful login"/></testsuite>

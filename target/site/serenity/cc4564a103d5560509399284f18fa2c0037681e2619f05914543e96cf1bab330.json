@@ -1,0 +1,150 @@
+{
+  "name": "Successfully fetch user profile after a successful login",
+  "id": "fetch-user-details-after-authentication;successfully-fetch-user-profile-after-a-successful-login",
+  "scenarioId": "classpath:features/Get_User_API:Successfully fetch user profile after a successful login",
+  "methodName": "Successfully fetch user profile after a successful login",
+  "testSteps": [
+    {
+      "number": 1,
+      "description": "Given an EventHub API is available",
+      "duration": 593,
+      "startTime": "2026-08-20T01:05:41.844570+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 2,
+      "description": "And I build the request payload from CSV row \"TC01\" from file \"src/test/resources/testdata/login_payload_data.csv\"",
+      "duration": 93,
+      "startTime": "2026-08-20T01:05:42.485784100+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 3,
+      "description": "When I send a POST request to \"/login\"",
+      "duration": 3175,
+      "startTime": "2026-08-20T01:05:42.578948200+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 4,
+          "description": "POST https://api.eventhub.rahulshettyacademy.com/api/auth/login",
+          "duration": 0,
+          "startTime": "2026-08-20T01:05:46.334832200+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "POST",
+            "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/login",
+            "content": "{\n    \"email\": \"josh1@gmail.com\",\n    \"password\": \"ca3Qmeps\"\n}",
+            "contentType": "application/json",
+            "requestHeaders": "Accept\u003dapplication/json\r\n\t\t\t\tContent-Type\u003dapplication/json",
+            "requestCookies": "",
+            "responseHeaders": "Date: Wed, 19 Aug 2026 19:35:44 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 256\r\nETag: W/\"100-erJGMfvg75uTNQ/G3Ha2GbXuhoU\"\r\nKeep-Alive: timeout\u003d5, max\u003d100\r\nConnection: Keep-Alive\r",
+            "responseCookies": "\r",
+            "responseBody": "{\n    \"success\": true,\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQxMDc5LCJlbWFpbCI6Impvc2gxQGdtYWlsLmNvbSIsImlhdCI6MTc4NzE2ODE0NCwiZXhwIjoxNzg3NzcyOTQ0fQ.vUV1iOn-0TdKlRvYDzvfsgyxcIX6G9yEHu0KHbSMaoA\",\n    \"user\": {\n        \"id\": 41079,\n        \"email\": \"josh1@gmail.com\"\n    }\n}",
+            "statusCode": 200
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "description": "Then the status code should be 200",
+      "duration": 181,
+      "startTime": "2026-08-20T01:05:45.754814+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 6,
+      "description": "And a valid JWT token is generated",
+      "duration": 39,
+      "startTime": "2026-08-20T01:05:45.936403100+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 7,
+      "description": "When I send a GET request to \"/me\" using the obtained JWT token",
+      "duration": 258,
+      "startTime": "2026-08-20T01:05:45.976064300+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0,
+      "children": [
+        {
+          "number": 8,
+          "description": "GET https://api.eventhub.rahulshettyacademy.com/api/auth/me",
+          "duration": 0,
+          "startTime": "2026-08-20T01:05:46.343851300+05:30[Asia/Calcutta]",
+          "result": "SUCCESS",
+          "restQuery": {
+            "method": "GET",
+            "path": "https://api.eventhub.rahulshettyacademy.com/api/auth/me",
+            "content": "",
+            "contentType": "null",
+            "requestHeaders": "Authorization\u003dBearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQxMDc5LCJlbWFpbCI6Impvc2gxQGdtYWlsLmNvbSIsImlhdCI6MTc4NzE2ODE0NCwiZXhwIjoxNzg3NzcyOTQ0fQ.vUV1iOn-0TdKlRvYDzvfsgyxcIX6G9yEHu0KHbSMaoA\r\n\t\t\t\tAccept\u003d*/*",
+            "requestCookies": "",
+            "responseHeaders": "Date: Wed, 19 Aug 2026 19:35:45 GMT\r\nServer: Apache/2.4.52 (Ubuntu)\r\nX-Powered-By: Express\r\nAccess-Control-Allow-Origin: https://eventhub.rahulshettyacademy.com\r\nVary: Origin\r\nAccess-Control-Allow-Credentials: true\r\nContent-Type: application/json; charset\u003dutf-8\r\nContent-Length: 100\r\nETag: W/\"64-16gStJsNaz05AbHpW5s86WJwdbc\"\r\nKeep-Alive: timeout\u003d5, max\u003d100\r\nConnection: Keep-Alive\r",
+            "responseCookies": "\r",
+            "responseBody": "{\n    \"success\": true,\n    \"user\": {\n        \"userId\": 41079,\n        \"email\": \"josh1@gmail.com\",\n        \"iat\": 1787168144,\n        \"exp\": 1787772944\n    }\n}",
+            "statusCode": 200
+          },
+          "precondition": false,
+          "level": 1
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "description": "Then the status code should be 200",
+      "duration": 18,
+      "startTime": "2026-08-20T01:05:46.239228400+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    },
+    {
+      "number": 10,
+      "description": "And the response body should contain the user\u0027s id and email",
+      "duration": 31,
+      "startTime": "2026-08-20T01:05:46.264038300+05:30[Asia/Calcutta]",
+      "result": "SUCCESS",
+      "precondition": false,
+      "level": 0
+    }
+  ],
+  "userStory": {
+    "id": "classpath:features/Get_User_API",
+    "storyName": "Fetch user details after authentication",
+    "displayName": "Fetch user details after authentication",
+    "path": "Get_User_API",
+    "pathElements": [
+      {
+        "name": "Get_User_API",
+        "description": ""
+      }
+    ],
+    "narrative": "  As a registered user\n  I want to log in and retrieve my profile details\n  So that I can access my account securely",
+    "type": "feature"
+  },
+  "title": "Successfully fetch user profile after a successful login",
+  "description": "",
+  "startTime": "2026-08-20T01:05:41.824764300+05:30[Asia/Calcutta]",
+  "endTime": "2026-08-20T01:05:46.301353300+05:30[Asia/Calcutta]",
+  "duration": 4510,
+  "projectKey": "",
+  "isManualTestingUpToDate": false,
+  "manual": false,
+  "testSource": "Cucumber",
+  "result": "SUCCESS"
+}

@@ -60,19 +60,26 @@ public class AuthStepDefinition {
 
     @When("I send a POST request to {string}")
     public void iSendAPOSTRequestTo(String request) {
-        // Write code here that turns the phrase above into concrete actions
         eventHub.callApi(request, payLoadBody, requestSpecification);
     }
 
     @Then("the status code should be {int}")
     public void theStatusCodeShouldBe(int code) {
-        // Write code here that turns the phrase above into concrete actions
         eventHub.validateResponseCode(code);
     }
 
     @And("the response message should be {string}")
     public void theResponseMessageShouldBe(String message) {
-        // Write code here that turns the phrase above into concrete actions
         eventHub.validateResponseMessage(message);
+    }
+
+    @When("I send a GET request to {string} using the obtained JWT token")
+    public void iSendAGETRequestToUsingTheObtainedJWTToken(String request) {
+        eventHub.callGetApi(request, requestSpecification);
+    }
+
+    @And("the response body should contain the user's id and email")
+    public void theResponseBodyShouldContainTheUserSAnd() {
+        eventHub.validateUserIdandEmail();
     }
 }
